@@ -1,53 +1,73 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace Server
+
+namespace Negocio
 {
     public class AccesoDatos
     {
-        public SqlConnection conection;
-        public SqlDataReader lector;
-        public SqlCommand cmd;
+        private SqlConnection conexion;
+        private SqlCommand comando;
+        private SqlDataReader lector;
+
+        public SqlDataReader Lector 
+        {
+            get { return lector; }
+        }
         public AccesoDatos()
         {
-            conection = new SqlConnection(""); // ruta
-            cmd = new SqlCommand();
-
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database= CATALOGO_P3_DB; integrated security=true");
+            comando = new SqlCommand();
         }
-
-        public void setConsulta(string consulta) {  
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = consulta;
-        }
-        
-        public void ejecutarConsulta()
+        public void setearConsulta(string consulta)
         {
-            cmd.Connection = conection;
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = consulta;
+        }
+        public void ejecutarLectura()
+        {
+            comando.Connection = conexion;
             try
             {
-                conection.Open();
-                lector = cmd.ExecuteReader();
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
-        
         }
-        public SqlDataReader getLector() { 
-            return lector;
-        }
+        public void ejecutarAccion()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();
 
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
         public void cerrarConexion()
         {
-            if (lector != null)
-                conection.Close();
-            conection.Close ();
+            try
+            {
+                if (lector != null)
+                    lector.Close();
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
     }
 }
