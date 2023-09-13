@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Dominio;
 using System.Data.SqlTypes;
+using System.Net;
 
 namespace Server
 {
@@ -26,10 +27,18 @@ namespace Server
                     aux.Descripcion = (String)datos.lector["Descripcion"];
                     aux.Nombre = (String)datos.lector["Nombre"];
                     aux.Codigo = (String)datos.lector["Codigo"];
-                    //aux.Precio = (float)datos.lector["Precio"];
+                    aux.Precio = (decimal)datos.lector["Precio"];
                     aux.Marca = (String)datos.lector["Marca"];
                     aux.linkImagen = (String)datos.lector["ImagenUrl"];
-                    //aux.Categoria = (String)datos.lector["Categoria"];
+                    if (datos.lector.IsDBNull(datos.lector.GetOrdinal("Categoria")))
+                    {
+                        aux.Categoria = "";
+                    }
+                    else
+                    {
+                        aux.Categoria = (String)datos.lector["Categoria"];
+                    }
+                    
                     
                     Catalogo.Add(aux);
 

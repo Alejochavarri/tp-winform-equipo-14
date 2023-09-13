@@ -58,7 +58,16 @@ namespace WindowsFormsApp
         {
             Articulos A;
             A = (Articulos)dgbArticulos.CurrentRow.DataBoundItem;
-            pictureBox1.Load(A.linkImagen);
+            try
+            {
+                pictureBox1.Load(A.linkImagen);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+           
         }
 
         private void buscarArticuloToolStripMenuItem_Click(object sender, EventArgs e)

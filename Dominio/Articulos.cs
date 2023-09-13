@@ -15,7 +15,7 @@ namespace Dominio
         public string Marca { get; set; }
         public string Categoria { get; set; }
         public string linkImagen { get; set; }
-        public float Precio { get; set; }
+        public decimal Precio { get; set; }
 
         public override string ToString()
         {
