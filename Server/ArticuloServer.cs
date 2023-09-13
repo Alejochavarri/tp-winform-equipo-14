@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Dominio;
+using System.Data.SqlTypes;
 
 namespace Server
 {
@@ -16,18 +17,29 @@ namespace Server
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setConsulta(""); // falta ruta
+                datos.setConsulta("select A.Id, A.Codigo,A.Descripcion,A.Nombre,A.Precio,I.ImagenUrl, M.Descripcion as Marca,C.Descripcion as Categoria from ARTICULOS as A \r\ninner join IMAGENES as I on A.Id = I.Id\r\ninner join MARCAS as M on A.Id = M.Id\r\nleft join CATEGORIAS as C on A.Id = C.Id "); // falta ruta
                 datos.ejecutarConsulta();
                 while (datos.lector.Read())
                 {
-                    // consultas
+                    Articulos aux = new Articulos();
+                    aux.ID = (int)datos.lector["Id"];
+                    aux.Descripcion = (String)datos.lector["Descripcion"];
+                    aux.Nombre = (String)datos.lector["Nombre"];
+                    aux.Codigo = (String)datos.lector["Codigo"];
+                    //aux.Precio = (float)datos.lector["Precio"];
+                    aux.Marca = (String)datos.lector["Marca"];
+                    aux.linkImagen = (String)datos.lector["ImagenUrl"];
+                    //aux.Categoria = (String)datos.lector["Categoria"];
+                    
+                    Catalogo.Add(aux);
+
                 }
                 
                 return Catalogo;
             }
             catch (Exception ex)
             {
-
+                
                 throw ex;
             }
             finally

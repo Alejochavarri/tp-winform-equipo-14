@@ -14,7 +14,7 @@ namespace Server
         public SqlCommand cmd;
         public AccesoDatos()
         {
-            conection = new SqlConnection(""); // ruta
+            conection = new SqlConnection("server=.\\SQLEXPRESS;database=CATALOGO_P3_DB;integrated security=true"); // ruta
             cmd = new SqlCommand();
 
         }
