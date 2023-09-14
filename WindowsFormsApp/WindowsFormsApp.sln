@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp", "WindowsFormsApp.csproj", "{C9F2D158-4010-4FCF-822B-92A2B59C7FFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "..\Dominio\Dominio.csproj", "{B88148FE-2CDC-4C9F-85CF-70A1C0DC4B79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "..\Server\Server.csproj", "{8E232A39-B099-44DB-B8C0-58EC808CB319}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9F2D158-4010-4FCF-822B-92A2B59C7FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9F2D158-4010-4FCF-822B-92A2B59C7FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9F2D158-4010-4FCF-822B-92A2B59C7FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9F2D158-4010-4FCF-822B-92A2B59C7FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B88148FE-2CDC-4C9F-85CF-70A1C0DC4B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B88148FE-2CDC-4C9F-85CF-70A1C0DC4B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B88148FE-2CDC-4C9F-85CF-70A1C0DC4B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B88148FE-2CDC-4C9F-85CF-70A1C0DC4B79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E232A39-B099-44DB-B8C0-58EC808CB319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E232A39-B099-44DB-B8C0-58EC808CB319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E232A39-B099-44DB-B8C0-58EC808CB319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E232A39-B099-44DB-B8C0-58EC808CB319}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F0D7B0C1-C3F6-422F-9962-B6F1E25BD608}
+	EndGlobalSection
+EndGlobal
