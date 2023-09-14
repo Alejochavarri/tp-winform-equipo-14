@@ -36,8 +36,8 @@ namespace WindowsFormsApp
             ArticuloServer DB = new ArticuloServer();
             Listarticulos = DB.listar();
             dgbArticulos.DataSource = Listarticulos;
-            
-            
+            ocultarColumnas();
+
         }
 
         private void verCatalogoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,6 +45,7 @@ namespace WindowsFormsApp
             ArticuloServer DB = new ArticuloServer();
             Listarticulos = DB.listar();
             dgbArticulos.DataSource = Listarticulos;
+            ocultarColumnas();
         }
 
         private void dgbArticulos_DoubleClick(object sender, EventArgs e)
@@ -57,16 +58,20 @@ namespace WindowsFormsApp
         private void dgbArticulos_SelectionChanged(object sender, EventArgs e)
         {
             Articulos A;
-            A = (Articulos)dgbArticulos.CurrentRow.DataBoundItem;
-            try
+            if(dgbArticulos.CurrentRow!= null)
             {
-                pictureBox1.Load(A.linkImagen);
+                A = (Articulos)dgbArticulos.CurrentRow.DataBoundItem;
+                try
+                {
+                    pictureBox1.Load(A.linkImagen);
+                }
+                catch (Exception ex)
+                {
+                    pictureBox1.Load("https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg");
+                    //throw ex;
+                }
             }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
+            
            
         }
 
@@ -89,6 +94,35 @@ namespace WindowsFormsApp
             {
                 MessageBox.Show("No se encontro el articulo, reintente mas tarde ... ");
             }
+        }
+
+        private void ocultarColumnas()
+        {
+            dgbArticulos.Columns["linkImagen"].Visible = false;
+            dgbArticulos.Columns["ID"].Visible = false;
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulos> listaFiltrada;
+            string filtro = txtFiltro.Text;
+            if(filtro.Length >= 2)
+            {
+                listaFiltrada = Listarticulos.FindAll(Obj => Obj.Nombre.ToUpper().Contains(filtro.ToUpper()) || Obj.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+                
+            }
+            else
+            {
+                listaFiltrada = Listarticulos;
+            }
+            dgbArticulos.DataSource = null;
+            dgbArticulos.DataSource = listaFiltrada;
+            ocultarColumnas();
         }
     }
 }
