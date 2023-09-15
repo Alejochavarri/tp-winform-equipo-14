@@ -34,31 +34,48 @@ namespace WindowsFormsApp
         private void Form1_Load(object sender, EventArgs e)
         {
             ArticuloServer DB = new ArticuloServer();
-            Listarticulos = DB.listar();
-            dgbArticulos.DataSource = Listarticulos;
+            try
+            {
+                Listarticulos = DB.listar();
+                dgvArticulos.DataSource = Listarticulos;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
 
         }
 
         private void verCatalogoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ArticuloServer DB = new ArticuloServer();
-            Listarticulos = DB.listar();
-            dgbArticulos.DataSource = Listarticulos;
+            try
+            {
+                Listarticulos = DB.listar();
+                dgvArticulos.DataSource = Listarticulos;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
-        private void dgbArticulos_DoubleClick(object sender, EventArgs e)
+        private void dgvArticulos_DoubleClick(object sender, EventArgs e)
         {
             Articulos A;
-            A = (Articulos)dgbArticulos.CurrentRow.DataBoundItem;
+            A = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
             MessageBox.Show(A.ToString());
         }
 
-        private void dgbArticulos_SelectionChanged(object sender, EventArgs e)
+        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
             Articulos A;
-            if (dgbArticulos.CurrentRow != null)
+            if (dgvArticulos.CurrentRow != null)
             {
-                A = (Articulos)dgbArticulos.CurrentRow.DataBoundItem;
+                A = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
                 try
                 {
                     pictureBox1.Load(A.Imagen[0].UrlImagen);
@@ -111,8 +128,8 @@ namespace WindowsFormsApp
             {
                 listaFiltrada = Listarticulos;
             }
-            dgbArticulos.DataSource = null;
-            dgbArticulos.DataSource = listaFiltrada;
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listaFiltrada;
         }
 
 
@@ -120,6 +137,12 @@ namespace WindowsFormsApp
         {
             Marcas ventanaMarcas = new Marcas();
             ventanaMarcas.ShowDialog();
+        }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VentanaCategorias ventanaCategorias = new VentanaCategorias();
+            ventanaCategorias.ShowDialog();
         }
     }
 }

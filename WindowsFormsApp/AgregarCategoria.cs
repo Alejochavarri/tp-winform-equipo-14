@@ -12,61 +12,60 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp
 {
-    public partial class AgregarMarca : Form
+    public partial class AgregarCategoria : Form
     {
-        public AgregarMarca()
+        public AgregarCategoria()
         {
             InitializeComponent();
+            Text = "Agregar Categoria";
         }
-       
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
             {
                 string descripcion = txbDescripcion.Text;
-                MarcaServer marcaNegocio = new MarcaServer();
-                Marca aux = marcaNegocio.buscarPorDescripcion(descripcion);
+                CategoriaServer categoriaNegocio = new CategoriaServer();
+                Categoria aux = categoriaNegocio.buscarPorDescripcion(descripcion);
                 if (aux != null)
                 {
-                    lblNuevaMarca.Text = $"Ya existe una marca con el nombre '{descripcion}'";
+                    lblNuevaMarca.Text = $"Ya existe una categoria con el nombre '{descripcion}'";
                     lblNuevaMarca.ForeColor = Color.Red;
                     return;
                 }
-
-
                 if (descripcion == "")
                 {
-                    MessageBox.Show("No se puede guardar una Marca vacía");
+                    MessageBox.Show("No se puede guardar una Categoria vacía");
                 }
                 else
                 {
-                    int ok = marcaNegocio.guardar(descripcion);
+                    int ok = categoriaNegocio.guardar(descripcion);
                     if (ok == -1)
                     {
-                        lblNuevaMarca.Text = $"No se pudo guardar la marca '{descripcion}'";
-                        MessageBox.Show("No se pudo guardar la marca!");
+                        lblNuevaMarca.Text = $"No se pudo guardar la categoria '{descripcion}'";
                         lblNuevaMarca.ForeColor = Color.Red;
+                        MessageBox.Show("No se pudo guardar la categoria!");
                         return;
                     }
+
                     lblNuevaMarca.ForeColor = Color.Green;
-                    lblNuevaMarca.Text = "Marca guardada correctamente!";
-                    MessageBox.Show("Marca guardada correctamente!");
+                    lblNuevaMarca.Text = "Categoria guardada correctamente!";
+                    MessageBox.Show("Categoria guardada correctamente!");
                     this.Close();
                 }
 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("No se pudo guardar la marca!");
+                MessageBox.Show("Error: " + ex);
                 return;
             }
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-
         }
     }
 }
