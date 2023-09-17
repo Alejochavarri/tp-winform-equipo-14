@@ -244,5 +244,12 @@ namespace WindowsFormsApp
             eliminarArticulo.ShowDialog();
             Form1_Load(sender, e);
         }
+
+        private void btnDetalleArticulo_Click(object sender, EventArgs e)
+        {
+            seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+            DetalleArticulo detalleArticulo = new DetalleArticulo(seleccionado);
+            detalleArticulo.ShowDialog();
+        }
     }
 }

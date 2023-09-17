@@ -45,6 +45,7 @@
             this.btnFotoDer = new System.Windows.Forms.Button();
             this.btnFotoIzq = new System.Windows.Forms.Button();
             this.lblFotos = new System.Windows.Forms.Label();
+            this.btnDetalleArticulo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
@@ -212,11 +213,22 @@
             this.lblFotos.TabIndex = 11;
             this.lblFotos.Text = "Foto 1 / 1";
             // 
+            // btnDetalleArticulo
+            // 
+            this.btnDetalleArticulo.Location = new System.Drawing.Point(724, 337);
+            this.btnDetalleArticulo.Name = "btnDetalleArticulo";
+            this.btnDetalleArticulo.Size = new System.Drawing.Size(151, 23);
+            this.btnDetalleArticulo.TabIndex = 12;
+            this.btnDetalleArticulo.Text = "Detalle Articulo";
+            this.btnDetalleArticulo.UseVisualStyleBackColor = true;
+            this.btnDetalleArticulo.Click += new System.EventHandler(this.btnDetalleArticulo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1225, 385);
+            this.Controls.Add(this.btnDetalleArticulo);
             this.Controls.Add(this.lblFotos);
             this.Controls.Add(this.btnFotoIzq);
             this.Controls.Add(this.btnFotoDer);
@@ -262,6 +274,7 @@
         private System.Windows.Forms.Button btnFotoDer;
         private System.Windows.Forms.Button btnFotoIzq;
         private System.Windows.Forms.Label lblFotos;
+        private System.Windows.Forms.Button btnDetalleArticulo;
     }
 }
 
