@@ -1,0 +1,12 @@
+C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\Prueba\este\Dominio\bin\Debug\Dominio.dll
+C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\Prueba\este\Dominio\bin\Debug\Dominio.pdb
+C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\Prueba\este\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\Prueba\este\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\Prueba\este\Dominio\obj\Debug\Dominio.dll
+C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\Prueba\este\Dominio\obj\Debug\Dominio.pdb
+C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\Dominio\bin\Debug\Dominio.dll
+C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\Dominio\bin\Debug\Dominio.pdb
+C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\Dominio\obj\Debug\Dominio.dll
+C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\Dominio\obj\Debug\Dominio.pdb

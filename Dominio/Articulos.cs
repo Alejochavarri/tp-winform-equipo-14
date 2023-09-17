@@ -1,7 +1,8 @@
-﻿using System;
+﻿using System; 
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Dominio
@@ -9,12 +10,12 @@ namespace Dominio
     public class Articulos
     {
         public int ID { get; set; }
-        public string Name { get; set; }
+        public string Codigo { get; set; }
+        public decimal Precio { get; set; }
+        public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public string Marca { get; set; }
-        public string Categoria { get; set; }
-        public string linkImagen { get; set; }
-        public float Precio { get; set; }
-
+        public Marca Marca { get; set; }
+        public Categoria Categoria { get; set; }
+        public List<Imagen> Imagen { get; set; }
     }
 }
