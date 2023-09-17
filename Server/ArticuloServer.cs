@@ -158,6 +158,97 @@ namespace Server
                 db.cerrarConexion();
             }
         }
+        public int guardar(Articulos nuevoArticulo)
+        {
+            int idArticulo = -1;
+            string codigo = nuevoArticulo.Codigo;
+            string nombre = nuevoArticulo.Nombre;
+            string descripcion = nuevoArticulo.Descripcion;
+            int idMarca = nuevoArticulo.Marca.Id;
+            int idCategoria = nuevoArticulo.Categoria.Id;
+            decimal precio = nuevoArticulo.Precio;
+
+            string query = $"INSERT INTO ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES(@codigo, @nombre, @descripcion, @idMarca, @idCategoria, @precio);" + "SELECT CAST(SCOPE_IDENTITY() AS INT) AS ID;";
+            AccesoDatos db = new AccesoDatos();
+            try
+            {
+                db.setConsulta(query);
+                db.setearParametro("@nombre", nombre);
+                db.setearParametro("@codigo", codigo);
+                db.setearParametro("@descripcion", descripcion);
+                db.setearParametro("@precio", precio);
+                db.setearParametro("@idCategoria", idCategoria);
+                db.setearParametro("@idMarca", idMarca);
+                db.ejecutarLectura();
+
+                if (db.Lector.Read())
+                {
+                    idArticulo = (int)db.Lector["ID"];
+                }
+
+                return idArticulo;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.cerrarConexion();
+            }
+
+        }
+        public int modificar(Articulos articulo)
+        {
+            AccesoDatos db = new AccesoDatos();
+            string query = "UPDATE ARTICULOS SET Nombre = @nombre, Codigo = @codigo, Descripcion = @descripcion, Precio = @precio, IdCategoria = @idCategoria, IdMarca = @idMarca WHERE id = @idArticulo";
+            int rowsAffected = 0;
+            try
+            {
+                db.setConsulta(query);
+                db.setearParametro("@nombre", articulo.Nombre);
+                db.setearParametro("@codigo", articulo.Codigo);
+                db.setearParametro("@descripcion", articulo.Descripcion);
+                db.setearParametro("@precio", articulo.Precio);
+                db.setearParametro("@idCategoria", articulo.Categoria.Id);
+                db.setearParametro("@idMarca", articulo.Marca.Id);
+                db.setearParametro("@idArticulo", articulo.ID);
+                rowsAffected = db.ejecutarAccion();
+                return rowsAffected;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.cerrarConexion();
+            }
+        }
+
+        public int eliminar(int idArticulo)
+        {
+            AccesoDatos db = new AccesoDatos();
+            string query = "DELETE FROM ARTICULOS WHERE Id = @idArticulo";
+            int rowsAffected = 0;
+            try
+            {
+                db.setConsulta(query);
+                db.setearParametro("@idArticulo", idArticulo);
+                rowsAffected = db.ejecutarAccion();
+
+                return rowsAffected;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.cerrarConexion();
+            }
+        }
+
 
 
     }

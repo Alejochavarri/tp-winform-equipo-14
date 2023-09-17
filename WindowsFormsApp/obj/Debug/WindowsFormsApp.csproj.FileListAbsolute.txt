@@ -36,3 +36,6 @@ C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 
 C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\WindowsFormsApp\obj\Debug\WindowsFormsApp.VentanaCategorias.resources
 C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\WindowsFormsApp\obj\Debug\WindowsFormsApp.AgregarCategoria.resources
 C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\WindowsFormsApp\obj\Debug\WindowsFormsApp.ModificarCategoria.resources
+C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\WindowsFormsApp\obj\Debug\WindowsFormsApp.AgregarArticulo.resources
+C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\WindowsFormsApp\obj\Debug\WindowsFormsApp.ModificarArticulo.resources
+C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\WindowsFormsApp\obj\Debug\WindowsFormsApp.EliminarArticulo.resources

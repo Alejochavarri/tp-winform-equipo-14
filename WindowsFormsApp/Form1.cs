@@ -15,6 +15,9 @@ namespace WindowsFormsApp
 
     {
         private List<Articulos> Listarticulos;
+        Articulos seleccionado;
+        private int countPic;
+        int cantidadImagenes;
 
         private void mostrarDetalle(Articulos A)
         {
@@ -24,12 +27,10 @@ namespace WindowsFormsApp
         public Form1()
         {
             InitializeComponent();
+            this.countPic = 0;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+     
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -44,7 +45,19 @@ namespace WindowsFormsApp
 
                 throw ex;
             }
-            
+            cantidadImagenes = seleccionado.Imagen.Count;
+            lblFotos.Text = "Foto " + (countPic + 1) + " / " + cantidadImagenes;
+
+            if (cantidadImagenes > 1)
+            {
+                btnFotoDer.Visible = true;
+                btnFotoIzq.Visible = true;
+            }
+            else
+            {
+                btnFotoDer.Visible = false;
+                btnFotoIzq.Visible = false;
+            }
 
         }
 
@@ -73,18 +86,30 @@ namespace WindowsFormsApp
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
             Articulos A;
-            if (dgvArticulos.CurrentRow != null)
+
+            seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+            countPic = 0;
+            cantidadImagenes = seleccionado.Imagen.Count;
+            if (seleccionado.Imagen.Count != 0)
             {
-                A = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
-                try
+
+                if (cantidadImagenes > 1)
                 {
-                    pictureBox1.Load(A.Imagen[0].UrlImagen);
+                    btnFotoDer.Visible = true;
+                    btnFotoIzq.Visible = true;
                 }
-                catch (Exception ex)
+                else
                 {
-                    pictureBox1.Load("https://img.freepik.com/vector-premium/vector-icono-imagen-predeterminado-pagina-imagen-faltante-diseno-sitio-web-o-aplicacion-movil-no-hay-foto-disponible_87543-11093.jpg");
-                    //throw ex;
+                    btnFotoDer.Visible = false;
+                    btnFotoIzq.Visible = false;
                 }
+                cargarImagen(seleccionado.Imagen.First().UrlImagen);
+                lblFotos.Text = "Foto " + (countPic + 1) + " / " + seleccionado.Imagen.Count;
+            }
+            else
+            {
+                cargarImagen("asd");
+                lblFotos.Text = "Foto 0 / 0";
             }
 
 
@@ -111,7 +136,19 @@ namespace WindowsFormsApp
             }
         }
 
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxArticulo.Load(imagen);
 
+            }
+            catch (Exception)
+            {
+
+                pbxArticulo.Load("https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg");
+            }
+        }
 
 
 
@@ -143,6 +180,69 @@ namespace WindowsFormsApp
         {
             VentanaCategorias ventanaCategorias = new VentanaCategorias();
             ventanaCategorias.ShowDialog();
+        }
+
+        private void btnFotoIzq_Click(object sender, EventArgs e)
+        {
+            int cantImagenes = seleccionado.Imagen.Count;
+            if (cantImagenes > 0)
+            {
+                if (countPic > 0) countPic--;
+                else if (countPic == 0)
+                    countPic = cantImagenes - 1;
+
+                lblFotos.Text = "Foto " + (countPic + 1) + " / " + seleccionado.Imagen.Count;
+                cargarImagen(seleccionado.Imagen[countPic].UrlImagen);
+            }
+            else
+            {
+                cargarImagen("asd");
+                lblFotos.Text = "Foto 0 / 0";
+            }
+        }
+
+        private void btnFotoDer_Click(object sender, EventArgs e)
+        {
+            int cantImagenes = seleccionado.Imagen.Count;
+            if (cantImagenes > 0)
+            {
+                if (countPic < cantImagenes - 1)
+                    countPic++;
+                else
+                    countPic = 0;
+
+                lblFotos.Text = "Foto " + (countPic + 1) + " / " + seleccionado.Imagen.Count;
+                if (seleccionado.Imagen.Count > 0)
+                    cargarImagen(seleccionado.Imagen[countPic].UrlImagen);
+            }
+            else
+            {
+                cargarImagen("asd");
+                lblFotos.Text = "Foto 0 / 0";
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AgregarArticulo agregarArticulo = new AgregarArticulo();
+            agregarArticulo.ShowDialog();
+            Form1_Load(sender, e);
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+            ModificarArticulo modificarArticulo = new ModificarArticulo(seleccionado);
+            modificarArticulo.ShowDialog();
+            Form1_Load(sender, e);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+            EliminarArticulo eliminarArticulo = new EliminarArticulo(seleccionado);
+            eliminarArticulo.ShowDialog();
+            Form1_Load(sender, e);
         }
     }
 }

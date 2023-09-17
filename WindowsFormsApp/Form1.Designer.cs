@@ -36,17 +36,18 @@
             this.buscarArticuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxArticulo = new System.Windows.Forms.PictureBox();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnright = new System.Windows.Forms.Button();
-            this.btnleft = new System.Windows.Forms.Button();
+            this.btnFotoDer = new System.Windows.Forms.Button();
+            this.btnFotoIzq = new System.Windows.Forms.Button();
+            this.lblFotos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvArticulos
@@ -61,7 +62,6 @@
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvArticulos.Size = new System.Drawing.Size(859, 229);
             this.dgvArticulos.TabIndex = 0;
-            this.dgvArticulos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             this.dgvArticulos.DoubleClick += new System.EventHandler(this.dgvArticulos_DoubleClick);
             // 
@@ -105,7 +105,7 @@
             // buscarArticuloToolStripMenuItem
             // 
             this.buscarArticuloToolStripMenuItem.Name = "buscarArticuloToolStripMenuItem";
-            this.buscarArticuloToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.buscarArticuloToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.buscarArticuloToolStripMenuItem.Text = "Buscar Articulo";
             this.buscarArticuloToolStripMenuItem.Click += new System.EventHandler(this.buscarArticuloToolStripMenuItem_Click);
             // 
@@ -123,15 +123,15 @@
             this.categoriasToolStripMenuItem.Text = "Categorias";
             this.categoriasToolStripMenuItem.Click += new System.EventHandler(this.categoriasToolStripMenuItem_Click);
             // 
-            // pictureBox1
+            // pbxArticulo
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(901, 86);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(308, 229);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pbxArticulo.Location = new System.Drawing.Point(901, 86);
+            this.pbxArticulo.Margin = new System.Windows.Forms.Padding(4);
+            this.pbxArticulo.Name = "pbxArticulo";
+            this.pbxArticulo.Size = new System.Drawing.Size(308, 229);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxArticulo.TabIndex = 2;
+            this.pbxArticulo.TabStop = false;
             // 
             // txtFiltro
             // 
@@ -160,15 +160,17 @@
             this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar selección";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // button2
+            // btnModificar
             // 
-            this.button2.Location = new System.Drawing.Point(227, 337);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(151, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Modificar seleccion";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnModificar.Location = new System.Drawing.Point(227, 337);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(151, 23);
+            this.btnModificar.TabIndex = 7;
+            this.btnModificar.Text = "Modificar seleccion";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -179,36 +181,51 @@
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Cargar nuevo";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // btnright
+            // btnFotoDer
             // 
-            this.btnright.Location = new System.Drawing.Point(1077, 336);
-            this.btnright.Name = "btnright";
-            this.btnright.Size = new System.Drawing.Size(75, 23);
-            this.btnright.TabIndex = 9;
-            this.btnright.UseVisualStyleBackColor = true;
+            this.btnFotoDer.Location = new System.Drawing.Point(1134, 333);
+            this.btnFotoDer.Name = "btnFotoDer";
+            this.btnFotoDer.Size = new System.Drawing.Size(75, 23);
+            this.btnFotoDer.TabIndex = 9;
+            this.btnFotoDer.Text = "Next";
+            this.btnFotoDer.UseVisualStyleBackColor = true;
+            this.btnFotoDer.Click += new System.EventHandler(this.btnFotoDer_Click);
             // 
-            // btnleft
+            // btnFotoIzq
             // 
-            this.btnleft.Location = new System.Drawing.Point(971, 336);
-            this.btnleft.Name = "btnleft";
-            this.btnleft.Size = new System.Drawing.Size(75, 23);
-            this.btnleft.TabIndex = 10;
-            this.btnleft.UseVisualStyleBackColor = true;
+            this.btnFotoIzq.Location = new System.Drawing.Point(901, 333);
+            this.btnFotoIzq.Name = "btnFotoIzq";
+            this.btnFotoIzq.Size = new System.Drawing.Size(75, 23);
+            this.btnFotoIzq.TabIndex = 10;
+            this.btnFotoIzq.Text = "Prev";
+            this.btnFotoIzq.UseVisualStyleBackColor = true;
+            this.btnFotoIzq.Click += new System.EventHandler(this.btnFotoIzq_Click);
+            // 
+            // lblFotos
+            // 
+            this.lblFotos.AutoSize = true;
+            this.lblFotos.Location = new System.Drawing.Point(1023, 336);
+            this.lblFotos.Name = "lblFotos";
+            this.lblFotos.Size = new System.Drawing.Size(61, 16);
+            this.lblFotos.TabIndex = 11;
+            this.lblFotos.Text = "Foto 1 / 1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1225, 385);
-            this.Controls.Add(this.btnleft);
-            this.Controls.Add(this.btnright);
+            this.Controls.Add(this.lblFotos);
+            this.Controls.Add(this.btnFotoIzq);
+            this.Controls.Add(this.btnFotoDer);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFiltro);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -220,7 +237,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,7 +249,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mostrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verCatalogoToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxArticulo;
         private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarArticuloToolStripMenuItem;
         private System.Windows.Forms.TextBox txtFiltro;
@@ -240,10 +257,11 @@
         private System.Windows.Forms.ToolStripMenuItem marcasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnright;
-        private System.Windows.Forms.Button btnleft;
+        private System.Windows.Forms.Button btnFotoDer;
+        private System.Windows.Forms.Button btnFotoIzq;
+        private System.Windows.Forms.Label lblFotos;
     }
 }
 
