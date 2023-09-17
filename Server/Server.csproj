@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="ArticuloServer.cs" />
+    <Compile Include="CategoriaServer.cs" />
+    <Compile Include="ImagenServer.cs" />
+    <Compile Include="MarcaServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

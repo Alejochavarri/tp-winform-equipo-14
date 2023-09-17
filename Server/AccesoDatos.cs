@@ -14,17 +14,25 @@ namespace Server
         public SqlCommand cmd;
         public AccesoDatos()
         {
-            conection = new SqlConnection(""); // ruta
+            conection = new SqlConnection("server=.\\SQLEXPRESS;database=CATALOGO_P3_DB;integrated security=true"); // ruta
             cmd = new SqlCommand();
 
         }
+        public SqlDataReader Lector
+        {
+            get { return lector; }
+        }
 
-        public void setConsulta(string consulta) {  
+        public void setConsulta(string consulta)
+        {
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.CommandText = consulta;
         }
-        
-        public void ejecutarConsulta()
+        public void setearParametro(string nombre, object valor)
+        {
+            cmd.Parameters.AddWithValue(nombre, valor);
+        }
+        public void ejecutarLectura()
         {
             cmd.Connection = conection;
             try
@@ -37,17 +45,29 @@ namespace Server
 
                 throw ex;
             }
-        
+
         }
-        public SqlDataReader getLector() { 
-            return lector;
+        public int ejecutarAccion()
+        {
+            cmd.Connection = this.conection;
+            int rowsAffected = 0;
+            try
+            {
+                conection.Open();
+                rowsAffected = cmd.ExecuteNonQuery();
+                return rowsAffected;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void cerrarConexion()
         {
             if (lector != null)
                 conection.Close();
-            conection.Close ();
+            conection.Close();
         }
     }
 }
