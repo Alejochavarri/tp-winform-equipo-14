@@ -48,7 +48,7 @@ namespace WindowsFormsApp
             if (MessageBox.Show("¿Seguro desea eliminar el articulo #" + articulo.Codigo + " " + articulo.Nombre + "?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
-                {
+                { 
                     int imgRows = imagenNegocio.eliminar(articulo.ID);
                     int rowsAffected = articuloNegocio.eliminar(articulo.ID);
                     if (rowsAffected == 1 && imgRows >= 1)

@@ -29,33 +29,44 @@ namespace WindowsFormsApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+           
+                ArticuloServer DB = new ArticuloServer();
+                try
+                {
+                    Listarticulos = DB.listar();
+                    dgvArticulos.DataSource = Listarticulos;
+                }
+                catch (Exception ex)
+                {
 
-            ArticuloServer DB = new ArticuloServer();
-            try
+                    throw ex;
+                }
+            if (contar() == 0)
             {
-                Listarticulos = DB.listar();
                 dgvArticulos.DataSource = Listarticulos;
-            }
-            catch (Exception ex)
-            {
 
-                throw ex;
-            }
-            cantidadImagenes = seleccionado.Imagen.Count;
-            lblFotos.Text = "Foto " + (countPic + 1) + " / " + cantidadImagenes;
-            dgvArticulos.Columns["ID"].Visible = false;
-            if (cantidadImagenes > 1)
-            {
-                btnFotoDer.Visible = true;
-                btnFotoIzq.Visible = true;
             }
             else
             {
-                btnFotoDer.Visible = false;
-                btnFotoIzq.Visible = false;
+                cantidadImagenes = seleccionado.Imagen.Count;
+                lblFotos.Text = "Foto " + (countPic + 1) + " / " + cantidadImagenes;
+                dgvArticulos.Columns["ID"].Visible = false;
+                if (cantidadImagenes > 1)
+                {
+                    btnFotoDer.Visible = true;
+                    btnFotoIzq.Visible = true;
+                }
+                else
+                {
+                    btnFotoDer.Visible = false;
+                    btnFotoIzq.Visible = false;
+                }
             }
+                
+            }
+            
 
-        }
+        
 
         private void verCatalogoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -206,27 +217,59 @@ namespace WindowsFormsApp
             Form1_Load(sender, e);
         }
 
+        private int contar()
+        {        
+            int contador = 0;
+            
+            foreach (Articulos A in Listarticulos)
+            {
+                contador++;
+            }
+            return contador;
+            
+        }
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
-            ModificarArticulo modificarArticulo = new ModificarArticulo(seleccionado);
-            modificarArticulo.ShowDialog();
-            Form1_Load(sender, e);
+            if(contar() != 0)
+            {
+                seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+                ModificarArticulo modificarArticulo = new ModificarArticulo(seleccionado);
+                modificarArticulo.ShowDialog();
+                Form1_Load(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("No hay elementos en para modificar.", "Error");
+            }
+            
         }
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
-            EliminarArticulo eliminarArticulo = new EliminarArticulo(seleccionado);
-            eliminarArticulo.ShowDialog();
-            Form1_Load(sender, e);
+            if(contar() != 0)
+            {
+                seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+                EliminarArticulo eliminarArticulo = new EliminarArticulo(seleccionado);
+                eliminarArticulo.ShowDialog();
+                Form1_Load(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("No hay elementos en para Eliminar.", "Error");
+            }
+           
         }
 
         private void btnDetalleArticulo_Click(object sender, EventArgs e)
         {
-            seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
-            DetalleArticulo detalleArticulo = new DetalleArticulo(seleccionado);
-            detalleArticulo.ShowDialog();
+            if(contar() != 0)
+            {
+                seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+                DetalleArticulo detalleArticulo = new DetalleArticulo(seleccionado);
+                detalleArticulo.ShowDialog();
+            }else { MessageBox.Show("No hay elementos en para Detallar.", "Error"); }
         }
+            
     }
 }

@@ -123,7 +123,7 @@ namespace WindowsFormsApp
                 string inCategoria = cbxCategoria.Text;
                 string inUrlImagen = tbxUrlImagen.Text;
 
-                if (inUrlImagen == "")
+                if (inUrlImagen.Trim() == "")
                 {
                     MessageBox.Show("No se puede cargar un articulo sin una imagen");
                     return;
