@@ -34,6 +34,7 @@ namespace WindowsFormsApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             ArticuloServer DB = new ArticuloServer();
             try
             {
@@ -47,7 +48,7 @@ namespace WindowsFormsApp
             }
             cantidadImagenes = seleccionado.Imagen.Count;
             lblFotos.Text = "Foto " + (countPic + 1) + " / " + cantidadImagenes;
-
+            dgvArticulos.Columns["ID"].Visible = false;
             if (cantidadImagenes > 1)
             {
                 btnFotoDer.Visible = true;
