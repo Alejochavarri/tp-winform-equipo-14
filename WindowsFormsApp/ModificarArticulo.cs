@@ -267,8 +267,8 @@ namespace WindowsFormsApp
                 chbxAgregarImg.Enabled = false;
                 chbxAgregarImg.Checked = false;
                 chbxModificarImg.Checked = true;
-                lblNImagen.Visible = false;
-                txtNImagen.Visible = false;
+                lblNImagen.Visible = true;
+                txtNImagen.Visible = true;
             }
             if (!chbxAgregarImg.Checked)
             {  
@@ -301,8 +301,8 @@ namespace WindowsFormsApp
                 chbxModificarImg.Enabled = false;
                 chbxModificarImg.Checked = false;
                 chbxAgregarImg.Checked = true;
-                lblNImagen.Visible = true;
-                txtNImagen.Visible = true;
+                lblNImagen.Visible = false;
+                txtNImagen.Visible = false;
             }
             if (!chbxModificarImg.Checked)
             {
