@@ -262,26 +262,53 @@ namespace WindowsFormsApp
 
         private void chbxModificarImg_CheckedChanged(object sender, EventArgs e)
         {
-            chbxModificarImg.Checked = true;
-            lblNImagen.Visible = true;
-            txtNImagen.Visible = true;
-            if (chbxAgregarImg.Checked)
+            if (chbxModificarImg.Checked)
             {
+                chbxAgregarImg.Enabled = false;
                 chbxAgregarImg.Checked = false;
-                return;
+                chbxModificarImg.Checked = true;
+                lblNImagen.Visible = true;
+                txtNImagen.Visible = true;
             }
+            if (!chbxAgregarImg.Checked)
+            {  
+                chbxAgregarImg.Enabled = true;
+                
+            }
+            
+            
+            //if (chbxAgregarImg.Checked)
+           // {
+              //  chbxAgregarImg.Checked = false;
+             //   return;
+            //}
         }
 
         private void chbxAgregarImg_CheckedChanged(object sender, EventArgs e)
         {
-            chbxAgregarImg.Checked = true;
-            if (chbxModificarImg.Checked)
+            //chbxAgregarImg.Checked = true;
+            //if (chbxModificarImg.Checked)
+            //{
+            //   chbxModificarImg.Checked = false;
+            //   lblNImagen.Visible = false;
+            //  txtNImagen.Visible = false;
+            //  return;
+
+            //}
+            
+            if (chbxAgregarImg.Checked)
             {
+                chbxModificarImg.Enabled = false;
                 chbxModificarImg.Checked = false;
+                chbxAgregarImg.Checked = true;
                 lblNImagen.Visible = false;
                 txtNImagen.Visible = false;
-                return;
-
+            }
+            if (!chbxModificarImg.Checked)
+            {
+                
+                chbxModificarImg.Enabled = true;
+                
             }
         }
     }
