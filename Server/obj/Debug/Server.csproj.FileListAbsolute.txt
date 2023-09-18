@@ -16,3 +16,12 @@ C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 
 C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\Server\obj\Debug\Server.csproj.CopyComplete
 C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\Server\obj\Debug\Server.dll
 C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\Server\obj\Debug\Server.pdb
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\Server\bin\Debug\Server.dll
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\Server\bin\Debug\Server.pdb
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\Server\bin\Debug\Dominio.dll
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\Server\bin\Debug\Dominio.pdb
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\Server\obj\Debug\Server.csproj.CopyComplete
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\Server\obj\Debug\Server.dll
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\Server\obj\Debug\Server.pdb

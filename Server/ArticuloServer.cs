@@ -26,24 +26,71 @@ namespace Server
 
                     int idArticulo = (int)datos.Lector["Id"];
                     aux.ID = idArticulo;
-                    if (!(datos.Lector["Codigo"] is DBNull)) aux.Codigo = (string)datos.Lector["Codigo"];
-                    if (!(datos.Lector["Nombre"] is DBNull)) aux.Nombre = (string)datos.Lector["Nombre"];
-                    if (!(datos.Lector["Descripcion"] is DBNull)) aux.Descripcion = (string)datos.Lector["Descripcion"];
-                    if (!(datos.Lector["Precio"] is DBNull)) aux.Precio = (decimal)datos.Lector["Precio"];
-
+                    //if (!(datos.Lector["Codigo"] is DBNull)) aux.Codigo = (string)datos.Lector["Codigo"];
+                    if (datos.lector.IsDBNull(datos.lector.GetOrdinal("Codigo")))
+                    {
+                        aux.Codigo = "";
+                    }
+                    else
+                    {
+                        aux.Codigo = (String)datos.lector["Codigo"];
+                    }
+                    //if (!(datos.Lector["Nombre"] is DBNull)) aux.Nombre = (string)datos.Lector["Nombre"];
+                    if (datos.lector.IsDBNull(datos.lector.GetOrdinal("Nombre")))
+                    {
+                        aux.Nombre = "";
+                    }
+                    else
+                    {
+                        aux.Nombre = (String)datos.lector["Nombre"];
+                    }
+                    //if (!(datos.Lector["Descripcion"] is DBNull)) aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    if (datos.lector.IsDBNull(datos.lector.GetOrdinal("Descripcion")))
+                    {
+                        aux.Descripcion = "";
+                    }
+                    else
+                    {
+                        aux.Descripcion = (String)datos.lector["Descripcion"];
+                    }
+                    //if (!(datos.Lector["Precio"] is DBNull)) aux.Precio = (decimal)datos.Lector["Precio"];
+                    if (datos.lector.IsDBNull(datos.lector.GetOrdinal("Precio")))
+                    {
+                        aux.Precio = 0;
+                    }
+                    else
+                    {
+                        aux.Precio = (decimal)datos.lector["Precio"];
+                    }
                     ImagenServer imagenNegocio = new ImagenServer();
                     aux.Imagen = imagenNegocio.imagenesArticulo(idArticulo);
 
                     aux.Marca = new Marca();
                     aux.Marca.Id = (int)datos.Lector["IdMarca"];
-                    if (!(datos.Lector["Desc_Marca"] is DBNull)) aux.Marca.Descripcion = (string)datos.Lector["Desc_Marca"];
+                    //if (!(datos.Lector["Desc_Marca"] is DBNull)) aux.Marca.Descripcion = (string)datos.Lector["Desc_Marca"];
+                    if (datos.lector.IsDBNull(datos.lector.GetOrdinal("Desc_Marca")))
+                    {
+                        aux.Marca.Descripcion = "";
+                    }
+                    else
+                    {
+                        aux.Marca.Descripcion = (String)datos.lector["Desc_Marca"];
+                    }
+
 
                     aux.Categoria = new Categoria();
                     aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
-                    if (!(datos.Lector["Desc_Categoria"] is DBNull)) aux.Categoria.Descripcion = (string)datos.Lector["Desc_Categoria"];
-                    
+                    //if (!(datos.Lector["Desc_Categoria"] is DBNull)) aux.Categoria.Descripcion = (string)datos.Lector["Desc_Categoria"];
+                    if (datos.lector.IsDBNull(datos.lector.GetOrdinal("Desc_Categoria")))
+                    {
+                        aux.Categoria.Descripcion = "";
+                    }
+                    else
+                    {
+                        aux.Categoria.Descripcion = (String)datos.lector["Desc_Categoria"];
+                    }
 
-                
+
 
                     Catalogo.Add(aux);
 

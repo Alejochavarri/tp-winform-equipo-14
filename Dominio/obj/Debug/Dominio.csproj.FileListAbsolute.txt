@@ -10,3 +10,9 @@ C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 
 C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\Dominio\obj\Debug\Dominio.dll
 C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\Dominio\obj\Debug\Dominio.pdb
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\Dominio\bin\Debug\Dominio.dll
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\Dominio\bin\Debug\Dominio.pdb
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\Dominio\obj\Debug\Dominio.dll
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\Dominio\obj\Debug\Dominio.pdb

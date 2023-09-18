@@ -19,11 +19,6 @@ namespace WindowsFormsApp
         private int countPic;
         int cantidadImagenes;
 
-        private void mostrarDetalle(Articulos A)
-        {
-            MessageBox.Show(A.ToString());
-        }
-
         public Form1()
         {
             InitializeComponent();
@@ -79,9 +74,9 @@ namespace WindowsFormsApp
 
         private void dgvArticulos_DoubleClick(object sender, EventArgs e)
         {
-            Articulos A;
-            A = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
-            MessageBox.Show(A.ToString());
+            seleccionado = (Articulos)dgvArticulos.CurrentRow.DataBoundItem;
+            DetalleArticulo detalleArticulo = new DetalleArticulo(seleccionado);
+            detalleArticulo.ShowDialog();
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
@@ -116,26 +111,7 @@ namespace WindowsFormsApp
 
         }
 
-        private void buscarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            String Codigo = Microsoft.VisualBasic.Interaction.InputBox("Bucar", "Codigo de Articulo", "");
-            Articulos A;
-            bool flag = false;
-            for (int i = 0; i < Listarticulos.Count(); i++)
-            {
-                A = Listarticulos[i];
-                if (A.Codigo.Equals(Codigo))
-                {
-                    MessageBox.Show(A.ToString());
-                    flag = true;
-                }
-
-            }
-            if (!flag)
-            {
-                MessageBox.Show("No se encontro el articulo, reintente mas tarde ... ");
-            }
-        }
+       
 
         private void cargarImagen(string imagen)
         {

@@ -40,3 +40,28 @@ C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 
 C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\WindowsFormsApp\obj\Debug\WindowsFormsApp.ModificarArticulo.resources
 C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\WindowsFormsApp\obj\Debug\WindowsFormsApp.EliminarArticulo.resources
 C:\Users\leozi\OneDrive\Escritorio\FACULTAD\3er Cuatrimestre\PROGRAMACION III\4 - WINFORMS++\este\WindowsFormsApp\obj\Debug\WindowsFormsApp.DetalleArticulo.resources
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\bin\Debug\WindowsFormsApp.exe.config
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\bin\Debug\WindowsFormsApp.exe
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\bin\Debug\WindowsFormsApp.pdb
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\bin\Debug\Dominio.dll
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\bin\Debug\Server.dll
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\bin\Debug\Dominio.pdb
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\bin\Debug\Server.pdb
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.AgregarArticulo.resources
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.AgregarCategoria.resources
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.AgregarMarca.resources
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.DetalleArticulo.resources
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.EliminarArticulo.resources
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.Form1.resources
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.ModificarArticulo.resources
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.ModificarCategoria.resources
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.ModificarMarca.resources
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.Properties.Resources.resources
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.VentanaCategorias.resources
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.Marcas.resources
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.CopyComplete
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.exe
+C:\Users\User\Desktop\Repo GitHub\tp-winform-equipo-14\tp-winform-equipo-14\WindowsFormsApp\obj\Debug\WindowsFormsApp.pdb
